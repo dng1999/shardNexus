@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { shard, items } from 'cleanSave.ts';
+import { shard, items } from '../cleanSave';
 
 @Component({
   selector: 'my-app',
@@ -12,6 +12,14 @@ export class AppComponent  {
   items = items;
 
   save(){
-    window.alert('Hy');
+    window.alert(this.shard);
   };
+
+  addItem(name) {
+    var items = this.items;
+    var i = 0;
+    for (i; i<items.length; i++){
+      if (items[i].name == name) { items[i].bought += 1; }
+    }
+  }
 }

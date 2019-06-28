@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Input } from '@angular/core';
+import { Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-euphonium',
@@ -13,12 +14,6 @@ export class EuphoniumComponent implements OnInit {
   ngOnInit() {
   }
 
-  addItem(name) {
-    var items = this.items;
-    var i = 0;
-    for (i; i<items.length; i++){
-      if (items[i].name == name) { items[i].bought += 1; }
-    }
-  }
+  @Output () addItem = new EventEmitter(name);
 
 }
