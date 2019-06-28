@@ -7,6 +7,7 @@ import { shard, items } from '../cleanSave';
   styleUrls: [ './app.component.css' ]
 })
 export class AppComponent  {
+  title = 'Shard';
   error = {status: false, message:''};
 
   //JSON parse to avoid shallow copying
@@ -21,6 +22,7 @@ export class AppComponent  {
   };
 
   reset() {
+    window.alert('Reset');
     //parse imported data again to reset and avoid shallow copying
     this.shard = JSON.parse(JSON.stringify(shard));
     this.items = JSON.parse(JSON.stringify(items));

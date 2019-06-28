@@ -1,4 +1,8 @@
-<app-navbar></app-navbar>
+<h1>{{title}}</h1>
+<p>
+  <button (click)="save()">Save</button>
+  <button (click)="reset()">Reset</button>
+</p>
 <table>
   <tr>
     <!--Bind shard var from app.component.ts to shard property so it can be an input for shard-bank.component.ts-->
