@@ -7,6 +7,10 @@ p, button {
   font-size: 16px;
 }
 
+p.error {
+  color: brown;
+}
+
 a, button {
   background-color: darkslateblue;
   color: white;

@@ -5,5 +5,5 @@
   <a [routerLink] = "['']">Home</a>
   <a [routerLink] = "['settings']">Settings</a>
 </p>
-<p *ngIf="error.status">{{error.message}}</p>
+<p class = "error" *ngIf="error.status">{{error.message}}</p>
 <p *ngIf="!error.status"> <br> </p>
