@@ -7,9 +7,10 @@ import { AppComponent } from './app.component';
 import { ShardBankComponent } from './shard-bank/shard-bank.component';
 import { EuphoniumComponent } from './euphonium/euphonium.component';
 import { SettingsComponent } from './settings/settings.component';
-import { SaveDataService } from './save-data.service';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
+
+import { SaveDataService } from './save-data.service';
 
 @NgModule({
   imports: [
