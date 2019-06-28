@@ -8,12 +8,13 @@ import { Output, EventEmitter } from '@angular/core';
   styleUrls: ['./euphonium.component.css']
 })
 export class EuphoniumComponent implements OnInit {
+  //get item variable from app.component.ts via bound property item
   @Input() items;
+  //signal to app.component.ts to run corresponding function
+  @Output () buyItem = new EventEmitter();
   constructor() { }
 
   ngOnInit() {
   }
-
-  @Output () addItem = new EventEmitter(name);
 
 }

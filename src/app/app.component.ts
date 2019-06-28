@@ -8,12 +8,26 @@ import { shard, items } from '../cleanSave';
 })
 export class AppComponent  {
   title = 'Shard Nexus';
-  shard = shard.wallet;
-  items = items;
 
-  save(){
-    window.alert(this.shard);
+  //JSON parse to avoid shallow copying
+  shard = JSON.parse(JSON.stringify(shard));
+  items = JSON.parse(JSON.stringify(items));
+
+  save() {
+    //making sure values taken from cleanSave aren't modifies
+    window.alert(JSON.stringify(items));
+    window.alert(JSON.stringify(shard));
   };
+
+  reset() {
+    //parse imported data again to reset and avoid shallow copying
+    this.shard = JSON.parse(JSON.stringify(shard));
+    this.items = JSON.parse(JSON.stringify(items));
+  }
+
+  addShard() {
+    this.shard++;
+  }
 
   addItem(name) {
     var items = this.items;

@@ -1,2 +1,4 @@
+<!--Display current shards-->
 <p>Shards: {{shard}}</p>
-<button (click)="addShard()">Shard</button>
+<!--On click, make produceShard emit; outputs to app.component.ts and triggers corresponding function-->
+<button (click)="produceShard.emit()">Shard</button>

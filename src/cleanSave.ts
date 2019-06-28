@@ -1,4 +1,4 @@
-export var shard = {wallet: 0};
+export var shard = 0;
 
 export var items = [
     {
