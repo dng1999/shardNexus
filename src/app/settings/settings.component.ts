@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { SaveDataService } from '../save-data.service';
-import { shard, items } from '../../cleanSave';
 
 @Component({
   selector: 'app-settings',
@@ -8,25 +7,20 @@ import { shard, items } from '../../cleanSave';
   styleUrls: ['./settings.component.css']
 })
 export class SettingsComponent implements OnInit {
-  shard;
-  items;
-  error;
 
   constructor (
     private saveDataService: SaveDataService
-  ) { 
-    this.shard = this.saveDataService.getShard();
-    this.items = this.saveDataService.getItems();
-    this.error = this.saveDataService.getError();
-  }
+  ) { }
 
   ngOnInit() {
   }
 
-  save() {
-    this.saveDataService.save();
+  //tell service to call exportSave()
+  exportSave() {
+    this.saveDataService.exportSave();
   };
 
+  //tell service to call reset()
   reset() {
     this.saveDataService.reset();
   };

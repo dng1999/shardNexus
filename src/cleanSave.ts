@@ -1,6 +1,7 @@
-export var shard = {wallet: 0};
+//is a dictionary for scalability
+var shard = {wallet: 0};
 
-export var items = [
+var items = [
     {
       name: 'Euphonium',
       bought: 0,
@@ -17,3 +18,6 @@ export var items = [
       price: 50
     }
   ];
+
+//condensed save data into one var for ease
+export var save = {shard: shard, items: items};

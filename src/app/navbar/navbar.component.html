@@ -1,2 +1,7 @@
 <h1>{{title}}</h1>
-<p><a [routerLink] = "['']">Home</a><a [routerLink] = "['settings']">Settings</a><p>
+<!--determines what router-outlet in app.component.html displays-->
+<!--html template chosen in app.module.ts-->
+<p>
+  <a [routerLink] = "['']">Home</a>
+  <a [routerLink] = "['settings']">Settings</a>
+</p>

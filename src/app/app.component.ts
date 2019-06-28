@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { SaveDataService } from '../app/save-data.service';
-import { shard, items } from '../cleanSave';
 
 @Component({
   selector: 'my-app',
