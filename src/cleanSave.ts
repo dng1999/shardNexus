@@ -7,7 +7,7 @@ export var items = [
       price: 1
     },
     {
-      name: 'Lamien',
+      name: 'Lomien',
       bought: 0,
       price: 10
     },

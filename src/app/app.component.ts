@@ -7,7 +7,6 @@ import { shard, items } from '../cleanSave';
   styleUrls: [ './app.component.css' ]
 })
 export class AppComponent  {
-  title = 'Shard Nexus';
   error = {status: false, message:''};
 
   //JSON parse to avoid shallow copying
@@ -39,6 +38,7 @@ export class AppComponent  {
     for (i; i<items.length; i++){
       if (items[i].name == name && items[i].price <= this.shard) {
         this.error.status = false;
+
         items[i].bought += 1;
         this.shard -= items[i].price;
         break;
