@@ -20,6 +20,12 @@ export class SettingsComponent implements OnInit {
     this.saveDataService.exportSave();
   };
 
+  //tell service to call exportSave()
+  importSave() {
+    var saveData = window.prompt("Please paste your save data.");
+    this.saveDataService.importSave(saveData);
+  };
+
   //tell service to call reset()
   reset() {
     this.saveDataService.reset();

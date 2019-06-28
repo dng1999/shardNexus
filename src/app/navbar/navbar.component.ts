@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SaveDataService } from '../save-data.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
   title = 'Shard';
-  constructor() { }
+  error;
+
+  constructor(
+    private saveDataService: SaveDataService
+  ) { 
+    this.error = this.saveDataService.getError();
+  }
 
   ngOnInit() {
   }

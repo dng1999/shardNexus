@@ -31,8 +31,15 @@ export class SaveDataService {
     window.alert((JSON.stringify({shard: this.shard, items: this.items})));
   };
 
-  importSave() {
-    
+  importSave(saveData) {
+    try {
+      this.shard = JSON.parse(JSON.stringify(saveData.shard));
+      this.items = JSON.parse(JSON.stringify(saveData.items));
+    }
+    catch (saveError) {
+      this.error.status = true;
+      this.error.message = 'Invalid save data.';
+    }
   }
 
   reset() {
