@@ -1,0 +1,23 @@
+/* Add application styles & imports to this file! */
+body {
+  font-family: Lato;
+}
+button {
+  background-color: darkslateblue;
+  color: white;
+  border: none;
+  padding: 5px;
+}
+
+table {
+  width: 100%;
+  border-color: black;
+  border-width: 1px;
+  border-style: solid;
+  padding: 5px;
+}
+
+td {
+  width: 50%;
+  vertical-align: top;
+}
