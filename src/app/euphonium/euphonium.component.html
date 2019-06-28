@@ -1,5 +1,5 @@
 <!--iterate through list of items-->
 <p *ngFor = "let item of items">
   <!--On click, make buyItem emit; outputs to app.component.ts and triggers corresponding function; passes item.name as $event arg-->
-  <button (click) = "buyItem.emit(item.name)"></button> {{item.name}} x{{item.bought}}
+  <button (click) = "buyItem.emit(item.name)">Buy</button> {{item.name}} x{{item.bought}}
 </p>
