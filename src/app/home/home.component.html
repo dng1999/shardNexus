@@ -1,0 +1,11 @@
+<table>
+  <tr>
+    <!--Bind shard var from app.component.ts to shard property so it can be an input for shard-bank.component.ts-->
+    <!--On click, shard-bank.component.ts will emit produceShard which will trigger addShard()-->
+    <td><app-shard-bank [shard]="shard" (produceShard)="addShard()"></app-shard-bank></td>
+    <!--Bind items var from app.component.ts to items property so it can be an input for euphonium.component.ts-->
+    <!--On click, euphonium.component.ts will emit buyItem which will trigger addItem($event); $event is taken from arg when buyItem emitted-->
+    <td><app-euphonium [items]="items" (buyItem)="addItem($event)"></app-euphonium></td>
+  </tr>
+</table>
+<p *ngIf="error.status">{{error.message}}</p>

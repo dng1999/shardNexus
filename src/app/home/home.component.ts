@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { SaveDataService } from '../save-data.service';
-import { shard, items } from '../../cleanSave';
 
 @Component({
-  selector: 'app-settings',
-  templateUrl: './settings.component.html',
-  styleUrls: ['./settings.component.css']
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
 })
-export class SettingsComponent implements OnInit {
+export class HomeComponent implements OnInit {
   shard;
   items;
   error;
@@ -23,12 +22,11 @@ export class SettingsComponent implements OnInit {
   ngOnInit() {
   }
 
-  save() {
-    this.saveDataService.save();
+  addShard() {
+    this.saveDataService.addShard();
   };
 
-  reset() {
-    this.saveDataService.reset();
+  addItem(name) {
+    this.saveDataService.addItem(name);
   };
-
 }
