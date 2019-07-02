@@ -1,0 +1,28 @@
+<table>
+  <tr>
+    <td>Shards Currently Owned</td>
+    <td>{{shard.wallet}}</td>
+  </tr>
+  <tr>
+    <td>Total Shards Owned</td>
+    <td>{{shard.lifetime}}</td>
+  </tr>
+  <tr>
+    <td>Shards/Click</td>
+    <td>{{totalBonus}}/click</td>
+  </tr>
+  <ng-template ngFor let-item [ngForOf] = "items"> 
+  <tr>
+    <td>{{item.name}}s Owned</td>
+    <td>{{item.bought}}</td>
+  </tr>
+  <tr>
+    <td>Bonus From {{item.name}}</td>
+    <td>{{item.bought * item.bonus}}</td>
+  </tr>
+  <tr>
+    <td>{{item.name}} Multiplier</td>
+    <td>{{item.multiplier}}</td>
+  </tr>
+  </ng-template>
+</table>
