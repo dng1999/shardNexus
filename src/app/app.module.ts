@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
 import { SaveDataService } from './save-data.service';
+import { StatisticsComponent } from './statistics/statistics.component';
 
 @NgModule({
   imports: [
@@ -21,7 +22,7 @@ import { SaveDataService } from './save-data.service';
       { path: 'settings', component: SettingsComponent },
     ])
   ],
-  declarations: [ AppComponent, ShardBankComponent, EuphoniumComponent, SettingsComponent, HomeComponent, NavbarComponent],
+  declarations: [ AppComponent, ShardBankComponent, EuphoniumComponent, SettingsComponent, HomeComponent, NavbarComponent, StatisticsComponent],
   bootstrap:    [ AppComponent ],
   providers: [SaveDataService]
 })
