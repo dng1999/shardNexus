@@ -3,6 +3,7 @@
 <!--html template chosen in app.module.ts-->
 <p>
   <a [routerLink] = "['']">Home</a>
+  <a [routerLink] = "['statistics']">Statistics</a>
   <a [routerLink] = "['settings']">Settings</a>
 </p>
 <p class = "error" *ngIf="error.status">{{error.message}}</p>

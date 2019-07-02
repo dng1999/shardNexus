@@ -27,6 +27,10 @@ export class SaveDataService {
     return this.items;
   };
 
+  getTotalBonus() {
+    return this.totalBonus;
+  };
+
   exportSave() {
     //condense current save into JSON string
     //can hash save later to prevent save editing
@@ -50,6 +54,7 @@ export class SaveDataService {
     this.shard = JSON.parse(JSON.stringify(save.shard));
     this.items = JSON.parse(JSON.stringify(save.items));
     this.error.status = false;
+    this.totalBonus = 1;
   };
 
   calculateItemBonus(){
@@ -64,7 +69,19 @@ export class SaveDataService {
 
   addShard() {
     this.shard.wallet += this.totalBonus;
+    this.shard.lifetime += this.totalBonus;
     this.error.status = false;
+  };
+
+  increaseItemPrice(name){
+    var items = this.items;
+    var i = 0;
+    for (i; i<items.length; i++){
+      if (items[i].name == name && items[i].price <= this.shard.wallet) {
+        items[i].price += save.items[i].price;
+        break;
+      }
+    }
   };
 
   addItem(name) {
@@ -76,7 +93,7 @@ export class SaveDataService {
 
         items[i].bought += 1;
         this.shard.wallet -= items[i].price;
-        items[i].price += save.items[i].price;
+        this.increaseItemPrice(name);
 
         this.calculateItemBonus()
         break;

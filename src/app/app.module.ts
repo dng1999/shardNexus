@@ -19,6 +19,7 @@ import { StatisticsComponent } from './statistics/statistics.component';
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
+      { path: 'statistics', component: StatisticsComponent },
       { path: 'settings', component: SettingsComponent },
     ])
   ],
