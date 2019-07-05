@@ -6,7 +6,6 @@ import { save } from '../cleanSave';
 //save data made a service since we want it to be shared across the app
 export class SaveDataService {
   error = {status: false, message:''};
-  totalBonus = 1;
 
   //JSON parse to avoid shallow copying
   shard = JSON.parse(JSON.stringify(save.shard));
@@ -25,10 +24,6 @@ export class SaveDataService {
 
   getItems() {
     return this.items;
-  };
-
-  getTotalBonus() {
-    return this.totalBonus;
   };
 
   exportSave() {
@@ -54,7 +49,7 @@ export class SaveDataService {
     this.shard = JSON.parse(JSON.stringify(save.shard));
     this.items = JSON.parse(JSON.stringify(save.items));
     this.error.status = false;
-    this.totalBonus = 1;
+    this.shard.totalBonus = 1;
   };
 
   calculateItemBonus(){
@@ -64,12 +59,12 @@ export class SaveDataService {
     for (i; i<items.length; i++){
       bonus += items[i].bought*items[i].bonus*items[i].multiplier;
     }
-    this.totalBonus = bonus + 1;
+    this.shard.totalBonus = bonus + 1;
   }
 
   addShard() {
-    this.shard.wallet += this.totalBonus;
-    this.shard.lifetime += this.totalBonus;
+    this.shard.wallet += this.shard.totalBonus;
+    this.shard.lifetime += this.shard.totalBonus;
     this.error.status = false;
   };
 

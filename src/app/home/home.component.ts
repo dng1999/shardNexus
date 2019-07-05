@@ -7,17 +7,10 @@ import { SaveDataService } from '../save-data.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  //need to have save data here for corresponding html
-  shard;
-  items;
-  error;
 
-  constructor (
+  constructor(
     private saveDataService: SaveDataService
-  ) { 
-    this.shard = this.saveDataService.getShard();
-    this.items = this.saveDataService.getItems();
-  }
+  ) { }
 
   ngOnInit() {
   }

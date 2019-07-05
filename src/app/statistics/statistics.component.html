@@ -9,9 +9,13 @@
   </tr>
   <tr>
     <td>Shards/Click</td>
-    <td>{{totalBonus}}/click</td>
+    <td>{{shard.totalBonus}}/click</td>
   </tr>
-  <ng-template ngFor let-item [ngForOf] = "items"> 
+</table>
+
+<ng-template ngFor let-item [ngForOf] = "items"> 
+<p></p>
+<table>
   <tr>
     <td>{{item.name}}s Owned</td>
     <td>{{item.bought}}</td>
@@ -24,5 +28,5 @@
     <td>{{item.name}} Multiplier</td>
     <td>{{item.multiplier}}</td>
   </tr>
-  </ng-template>
 </table>
+</ng-template>

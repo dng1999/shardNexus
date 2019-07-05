@@ -1,5 +1,5 @@
 //is a dictionary for scalability
-var shard = {wallet: 0, lifetime:0};
+var shard = {wallet: 0, lifetime:0, totalBonus: 1};
 
 var items = [
     {

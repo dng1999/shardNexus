@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Input } from '@angular/core';
+import { SaveDataService } from '../save-data.service';
 import { Output, EventEmitter } from '@angular/core';
 
 @Component({
@@ -8,11 +8,15 @@ import { Output, EventEmitter } from '@angular/core';
   styleUrls: ['./euphonium.component.css']
 })
 export class EuphoniumComponent implements OnInit {
-  //get item variable from app.component.ts via bound property item
-  @Input() items;
+  items;
   //signal to app.component.ts to run corresponding function
   @Output () buyItem = new EventEmitter();
-  constructor() { }
+
+  constructor(
+    private saveDataService: SaveDataService
+  ) { 
+    this.items = this.saveDataService.getItems();
+  }
 
   ngOnInit() {
   }

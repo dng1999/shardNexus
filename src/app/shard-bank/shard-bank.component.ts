@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Input } from '@angular/core';
+import { SaveDataService } from '../save-data.service';
 import { Output, EventEmitter } from '@angular/core';
 
 @Component({
@@ -8,11 +8,14 @@ import { Output, EventEmitter } from '@angular/core';
   styleUrls: ['./shard-bank.component.css']
 })
 export class ShardBankComponent implements OnInit {
-  //get shard variable from app.component.ts via bound property shard
-  @Input() shard;
+  shard;
   //signal to app.component.ts to run corresponding function
   @Output() produceShard = new EventEmitter();
-  constructor() { }
+  constructor(
+    private saveDataService: SaveDataService
+  ) { 
+    this.shard = this.saveDataService.getShard();
+  }
 
   ngOnInit() { }
 
