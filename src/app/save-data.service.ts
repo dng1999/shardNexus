@@ -42,6 +42,7 @@ export class SaveDataService {
       this.shard = JSON.parse(JSON.stringify(saveData.shard));
       this.items = JSON.parse(JSON.stringify(saveData.items));
       this.boost = JSON.parse(JSON.stringify(saveData.boost));
+      this.error.status = false;
     }
     catch (saveError) {
       this.error.status = true;
@@ -56,7 +57,6 @@ export class SaveDataService {
     this.items = JSON.parse(JSON.stringify(save.items));
     this.boost = JSON.parse(JSON.stringify(save.boost));
     this.error.status = false;
-    this.shard.totalBonus = 1;
   };
 
   calculateItemBonus(){

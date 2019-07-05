@@ -1,14 +1,13 @@
 <table>
   <tr>
-    <!--Bind shard var from app.component.ts to shard property so it can be an input for shard-bank.component.ts-->
     <!--On click, shard-bank.component.ts will emit produceShard which will trigger addShard()-->
     <td><app-shard-bank (produceShard)="addShard()"></app-shard-bank></td>
-    <!--Bind items var from app.component.ts to items property so it can be an input for euphonium.component.ts-->
     <!--On click, euphonium.component.ts will emit buyItem which will trigger addItem($event); $event is taken from arg when buyItem emitted-->
     <td><app-euphonium (buyItem)="addItem($event)"></app-euphonium></td>
   </tr>
   <tr>
     <td></td>
+    <!--On click, euphboost.component.ts will emit buyBoost which will trigger addBoost($event); $event is taken from arg when buyBoost emitted-->
     <td><app-euphboost (buyBoost)="addBoost($event)"></app-euphboost></td>
   </tr>
 </table>
