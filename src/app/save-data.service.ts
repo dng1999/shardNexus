@@ -34,7 +34,7 @@ export class SaveDataService {
   exportSave() {
     //condense current save into JSON string
     //can hash save later to prevent save editing
-    window.alert((JSON.stringify({shard: this.shard, items: this.items})));
+    window.alert((JSON.stringify({shard: this.shard, items: this.items, boost: this.boost})));
   };
 
   importSave(saveData) {
