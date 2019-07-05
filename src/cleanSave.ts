@@ -1,9 +1,9 @@
 //is a dictionary for scalability
-var shard = {wallet: 0, lifetime:0, totalBonus: 1};
+var shard = {wallet: 1000000000, lifetime:0, totalBonus: 1};
 
 var items = [
     {
-      name: 'Euphonium',
+      name: 'Eufe',
       bought: 0,
       price: 1,
       bonus: 0.5,
@@ -25,5 +25,29 @@ var items = [
     }
   ];
 
+var boost = [
+  {
+    name: "Emerald Trumpet",
+    item: 0,
+    owned: false,
+    price: 100,
+    multiplier: 1
+  },
+  {
+    name: "Jorm's Sword",
+    item: 1,
+    owned: false,
+    price: 5000,
+    multiplier: 4
+  },
+  {
+    name: "Time Flux",
+    item: 2,
+    owned: false,
+    price: 999999,
+    multiplier: 9
+  }
+];
+
 //condensed save data into one var for ease
-export var save = {shard: shard, items: items};
+export var save = {shard: shard, items: items, boost: boost};

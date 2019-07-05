@@ -7,4 +7,8 @@
     <!--On click, euphonium.component.ts will emit buyItem which will trigger addItem($event); $event is taken from arg when buyItem emitted-->
     <td><app-euphonium (buyItem)="addItem($event)"></app-euphonium></td>
   </tr>
+  <tr>
+    <td></td>
+    <td><app-euphboost (buyBoost)="addBoost($event)"></app-euphboost></td>
+  </tr>
 </table>

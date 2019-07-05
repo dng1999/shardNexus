@@ -12,6 +12,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 
 import { SaveDataService } from './save-data.service';
 import { StatisticsComponent } from './statistics/statistics.component';
+import { EuphboostComponent } from './euphboost/euphboost.component';
 
 @NgModule({
   imports: [
@@ -23,7 +24,7 @@ import { StatisticsComponent } from './statistics/statistics.component';
       { path: 'settings', component: SettingsComponent },
     ])
   ],
-  declarations: [ AppComponent, ShardBankComponent, EuphoniumComponent, SettingsComponent, HomeComponent, NavbarComponent, StatisticsComponent],
+  declarations: [ AppComponent, ShardBankComponent, EuphoniumComponent, SettingsComponent, HomeComponent, NavbarComponent, StatisticsComponent, EuphboostComponent],
   bootstrap:    [ AppComponent ],
   providers: [SaveDataService]
 })

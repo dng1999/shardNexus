@@ -15,13 +15,18 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
-  //tell service to call reset()
+  //tell service to call addShard()
   addShard() {
     this.saveDataService.addShard();
   };
 
-  //tell service to call reset()
+  //tell service to call addItem()
   addItem(name) {
     this.saveDataService.addItem(name);
+  };
+
+  //tell service to call addBoost()
+  addBoost(name) {
+    this.saveDataService.addBoost(name);
   };
 }
