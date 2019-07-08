@@ -2,5 +2,5 @@
 <!--iterate through list of boost-->
 <p *ngFor = "let obj of boost">
   <!--On click, make buyBoot emit; outputs to app.component.ts and triggers corresponding function; passes obj.name as $event arg-->
-  <button *ngIf = "!obj.owned" (click) = "buyBoost.emit(obj.name)">{{obj.price}} Shards</button> {{obj.name}}
+  <span *ngIf = "!obj.owned" ><button (click) = "buyBoost.emit(obj.name)">{{obj.price}} Shards</button> {{obj.name}}</span>
 </p>

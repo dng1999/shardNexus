@@ -34,7 +34,9 @@ export class SaveDataService {
   exportSave() {
     //condense current save into JSON string
     //can hash save later to prevent save editing
-    window.alert((JSON.stringify({shard: this.shard, items: this.items, boost: this.boost})));
+    var save = JSON.stringify({shard: this.shard, items: this.items, boost: this.boost});
+    this.error.status = true;
+    this.error.message = save;
   };
 
   importSave(saveData) {
@@ -75,15 +77,9 @@ export class SaveDataService {
     this.error.status = false;
   };
 
-  increaseItemPrice(name){
+  increaseItemPrice(index){
     var items = this.items;
-    var i = 0;
-    for (i; i<items.length; i++){
-      if (items[i].name == name && items[i].price <= this.shard.wallet) {
-        items[i].price += save.items[i].price;
-        break;
-      }
-    }
+    items[index].price += save.items[index].price;
   };
 
   addItem(name) {
@@ -95,7 +91,7 @@ export class SaveDataService {
 
         items[i].bought += 1;
         this.shard.wallet -= items[i].price;
-        this.increaseItemPrice(name);
+        this.increaseItemPrice(i);
 
         this.calculateItemBonus()
         break;

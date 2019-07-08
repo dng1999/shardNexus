@@ -30,3 +30,10 @@
   </tr>
 </table>
 </ng-template>
+
+Boost Owned:
+<ng-template ngFor let-bitem [ngForOf] = "boost"> 
+  <ul>
+    <li *ngIf = "bitem.owned">{{bitem.name}}</li>
+  </ul>
+</ng-template>

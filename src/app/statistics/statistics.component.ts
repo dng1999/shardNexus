@@ -9,12 +9,14 @@ import { SaveDataService } from '../save-data.service';
 export class StatisticsComponent implements OnInit {
   items;
   shard;
+  boost;
 
   constructor(
     private saveDataService: SaveDataService
   ) { 
     this.items = this.saveDataService.getItems();
     this.shard = this.saveDataService.getShard();
+    this.boost = this.saveDataService.getBoost();
   }
 
   ngOnInit() {

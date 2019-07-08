@@ -28,11 +28,12 @@ a:hover, button:hover {
 }
 
 table {
-  width: 100%;
+  width: 75%;
   border-color: black;
   border-width: 1px;
   border-style: solid;
-  padding: 5px;
+  padding: 10px;
+  margin: 10px;
 }
 
 td {
